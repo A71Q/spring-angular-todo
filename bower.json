@@ -1,0 +1,17 @@
+{
+  "name": "spring-angular-todo",
+  "version": "1.0-SNAPSHOT",
+  "homepage": "https://github.com/atiq21/spring-angular-todo",
+  "description": "Spring Angular ToDo",
+  "authors": [
+    "Atiqur Rahman"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
