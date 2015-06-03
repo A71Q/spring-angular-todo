@@ -1,6 +1,6 @@
-var todoApp = angular.module('todoApp', []);
+var todoControllers = angular.module('todoControllers', []);
 
-todoApp.controller('ToDoCtrl', function ($scope, $http) {
+todoControllers.controller('ToDoCtrl', function ($scope, $http) {
 
     console.log("todoctrl-e:");
 
@@ -12,7 +12,7 @@ todoApp.controller('ToDoCtrl', function ($scope, $http) {
         }).error(function () {
                 $scope.setError('Could not display all todos');
             });
-    }
+    };
 
     $scope.resetError = function () {
         $scope.error = false;

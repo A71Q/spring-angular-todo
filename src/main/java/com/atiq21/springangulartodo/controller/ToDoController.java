@@ -27,4 +27,9 @@ public class ToDoController {
 
         return todos;
     }
+
+    @RequestMapping("/list")
+    public String getTodoPartialPage() {
+        return "todo-list";
+    }
 }
