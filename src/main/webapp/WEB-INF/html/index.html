@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="todoApp">
 <head>
     <meta charset="utf-8">
     <title>My HTML File</title>
@@ -8,11 +8,22 @@
 
     <link rel="stylesheet" href="resources/css/main.css">
     <script src="resources/bower_components/angular/angular.js"></script>
+    <script src="resources/js/index.js"></script>
 
 </head>
-<body>
+<body ng-controller="ToDoCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+            Search: <input ng-model="query">
 
-<p>1 + 2 = {{ 1 + 2 }}</p>
-
+            <ul>
+                <li ng-repeat="todo in todos | filter:query">
+                    <p>{{todo}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
