@@ -1,10 +1,12 @@
 package com.atiq21.springangulartodo.controller;
 
+import com.atiq21.springangulartodo.domain.ToDo;
+import com.atiq21.springangulartodo.service.ToDoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,17 +17,13 @@ import java.util.List;
 @RequestMapping("/todo")
 public class ToDoController {
 
+    @Autowired
+    private ToDoService toDoService;
+
     @RequestMapping(value = "/all.json")
     @ResponseBody
-    public List<String> viewAllTodos() {
-
-        List<String> todos = new ArrayList<String>();
-        todos.add("First");
-        todos.add("Second");
-        todos.add("Third");
-        todos.add("Fourth");
-
-        return todos;
+    public List<ToDo> viewAllToDos() {
+        return toDoService.allToDos();
     }
 
     @RequestMapping("/list")
