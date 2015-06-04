@@ -16,6 +16,7 @@ todoController.controller('ToDoCtrl', function ($scope, $http, ToDoServiceList) 
         $http.post('todo/add', todo).success(function (response) {
             $scope.getAllTodos();
             $scope.todo.title = '';
+            $scope.todo.dueDate = '';
         }).error(function () {
                 $scope.setError('Could add todo');
             });
