@@ -4,10 +4,10 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form ng-submit="addTodo(todoName)">
+                    <form>
                         <div class="form-inline">
-                            <input class="form-control" placeholder="Enter Todo" type="text" ng-model="todoName" required min="1"/>
-                            <button class="btn btn-primary" ng-disabled="!todoName" ng-hide="editMode" ng-click="addTodo(todoName)">Add</button>
+                            <input class="form-control" placeholder="Enter Todo" type="text" ng-model="todo.title" required min="1"/>
+                            <input type="submit" class="btn btn-primary" ng-click="addTodo(todo)" value="Add" />
                         </div>
                     </form>
                 </div>

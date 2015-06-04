@@ -10,14 +10,15 @@ todoController.controller('ToDoCtrl', function ($scope, $http, ToDoServiceList) 
         $scope.todos = ToDoServiceList.query();
     };
 
-    $scope.addTodo = function (newTodo) {
+    $scope.addTodo = function (todo) {
         $scope.resetError();
-        $http.post('todo/add/' + newTodo).success(function (response) {
+        console.log(todo);
+        $http.post('todo/add', todo).success(function (response) {
             $scope.getAllTodos();
+            $scope.todo.title = '';
         }).error(function () {
-                    $scope.setError('Could add todo');
-                });
-        $scope.todoName = '';
+                $scope.setError('Could add todo');
+            });
     };
 
     $scope.resetError = function () {

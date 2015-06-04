@@ -11,6 +11,9 @@ public class ToDo {
     private Date dueDate;
     private Date completedDate;
 
+    public ToDo() {
+    }
+
     public ToDo(String title, Date dueDate) {
         this.title = title;
         this.dueDate = dueDate;

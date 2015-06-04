@@ -4,12 +4,11 @@ import com.atiq21.springangulartodo.domain.ToDo;
 import com.atiq21.springangulartodo.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,10 +28,11 @@ public class ToDoController {
         return toDoService.allToDos();
     }
 
-    @RequestMapping(value = "/add/{todo}", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public void addTodo(@PathVariable("todo") String todo) {
-        toDoService.addToDo(new ToDo(todo, new Date()));
+    public void addTodo(@RequestBody ToDo todo) {
+        System.out.println(todo);
+        toDoService.addToDo(todo);
     }
 
     @RequestMapping("/layout")
